@@ -20,7 +20,7 @@ class ContentModel: ObservableObject {
         do {
             let jsonData = try Data(contentsOf: jsonUrl!)
             let jsonDecoder = JSONDecoder()
-            try jsonDecoder.decode([Module].self, from: jsonData)
+            let modules = try jsonDecoder.decode([Module].self, from: jsonData)
             self.modules = modules
         }
         catch {
